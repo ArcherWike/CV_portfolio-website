@@ -84,6 +84,17 @@ li a {
   text-decoration: none;
 }
 
+.rectangle-my-info {
+            width: 100%; /* 2/3 szerokości ekranu */
+            height: 200px; /* Przykładowa wysokość */
+            max-height: 50%;
+            background-color: #96b7ce; /* Przykładowy kolor */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
 .navbar-menu {
   height: 100px;
   border-radius: 10px;
@@ -91,11 +102,64 @@ li a {
 
 }
 
+.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+            pointer-events: none;
+            transition: font-size 0.3s ease;
+        }
+
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar .buttons button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar .buttons button:hover {
+            background-color: #777;
+        }
+
+        .navbar.scrolled {
+            padding: 20px 40px;
+        }
+        .navbar.scrolled h1 {
+            font-size: 32px;
+        }
+
 a:hover {
   cursor: default;
 }
 .navbar a:hover {
   color: #abc7d8;
+}
+
+.text h3 {
+  font-size:50px;
+  display: flex;
+  color: #ffffff;
 }
 
 .project-title {
@@ -122,19 +186,22 @@ a:hover {
 
 <body>
   <!-- Navigation-->
-    <section><h2>Navigation Bar</h2>
-      <ul class="navbar-menu">
-        <li class="author"><a>Wiktoria Szczepańska</a></li>
-        <li class="navbar"><a class="active" href="#home">Home</a></li>
-        <li class="navbar"><a href="#news">News</a></li>
-        <li class="navbar"><a href="#contact">Contact</a></li>
-        <li class="navbar"><a href="#about">About</a></li>
-      </ul>
-    </section>
-    
-    <section><h2>Projects</h2>
-        <h1>Projects</h1>
-
+  <section><h2>Navigation</h2>
+  <div class="navbar" id="navbar">
+    <h1>Wiktoria Szczepanska</h1>
+    <div class="buttons">
+      <button>Przycisk 1</button>
+      <button>Przycisk 2</button>
+      <button>Przycisk 3</button>
+    </div>
+  </div>
+  </section>
+  
+  <div class="rectangle-my-info">
+    <div class="text"><h3>WIKTORIA SZCZEPANSKA</h3></div>
+  </div>
+    <section><h2>Portfolio</h2>
+      <div class="text"><h3>PORTFOLIO</h3></div>
         <div class="flex-container">
             <div class="flex-item" style="background-image: url(grave-harvest.gif);">
               <ul>
@@ -203,5 +270,16 @@ a:hover {
         <input type="text" placeholder="Email" required name="Email">
       </div>
     </section>
+
+    <script>
+      window.onscroll = function() {
+          const navbar = document.getElementById('navbar');
+          if (window.scrollY === 0) {
+              navbar.classList.add('scrolled');
+          } else {
+              navbar.classList.remove('scrolled');
+          }
+      };
+  </script>
 </body>
 </html>
