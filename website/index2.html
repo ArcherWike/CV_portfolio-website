@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grave Harvest</title>
+</head>
+<style>
+.main-img {
+    width: 100%;
+    height: 20%;
+}
+
+.row {
+  display: grid;
+  grid-template-areas: 'one one';
+}
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  width: 50%;
+  grid-column-gap: 10px;
+  margin-top: 10px;
+  background-color: rgb(179, 199, 200);
+  border-radius: 5px;
+  border-color: black;
+}
+
+.title {
+    font-size: medium;
+}
+@media (max-width: 800px) {
+          .main-img {
+            width: 100%;
+            height: 10%;
+          }
+
+          .row {
+    flex-direction: column;
+
+    .column {
+        width: 90%;
+    }
+  }
+</style>
+<body>
+    <div class="main-img">
+        <img src="">
+    </div>
+</body>
+    <section>
+        <div class="title"><h1>Grave Harvest</h1></div>
+        <div class="">
+            </div>
+    </section>
+    
+    <section>
+        <div class="row">
+            <div class="column">
+                <h1>1</h1><br>
+                <h4>xx</h4>
+            </div>
+                <div class="column">2</div>
+                <div class="column">3</div>
+                <div class="column" style="background-color: white;"></div>
+                <div class="column">4</div>
+                <div class="column" style="grid-column: 1/ span 2; 
+                background-image: url(Slime-war.png);">4</div>
+            </div>
+    </section>
+</html>
