@@ -253,7 +253,6 @@ width: 100%;
   font-size: 70px;
   transition: transform 0.3s;
   justify-self: center;
-  text-shadow: #333;
   object-fit: contain;
 
 }
