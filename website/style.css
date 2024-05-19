@@ -91,7 +91,7 @@ body {
 .navbar a:hover {
   color: #f5d997;
 }
-.navbar h1 {
+.navbar p {
   margin: 0;
   font-size: 24px;
   pointer-events: none;
@@ -104,7 +104,7 @@ body {
 .navbar.scrolled {
   padding: 20px 40px;
 }
-.navbar.scrolled h1 {
+.navbar.scrolled p {
   font-size: 32px;
 }
 a:hover {
