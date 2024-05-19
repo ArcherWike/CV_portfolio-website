@@ -1,131 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Przykład przewijania</title>
     <style>
-        * {
-        box-sizing: border-box;
+        /* CSS dla stylizacji */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
-        /* For mobile phones: */
-        [class*="col-"] {
+        .navbar {
+            position: fixed;
+            top: 0;
             width: 100%;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
-
-        @media only screen and (min-width: 600px) {
-        /* For tablets: */
-            .col-s-1 {width: 8.33%;}
-            .col-s-2 {width: 16.66%;}
-            .col-s-3 {width: 25%;}
-            .col-s-4 {width: 33.33%;}
-            .col-s-5 {width: 41.66%;}
-            .col-s-6 {width: 50%;}
-            .col-s-7 {width: 58.33%;}
-            .col-s-8 {width: 66.66%;}
-            .col-s-9 {width: 75%;}
-            .col-s-10 {width: 83.33%;}
-            .col-s-11 {width: 91.66%;}
-            .col-s-12 {width: 100%;}
+        .section {
+            padding: 50px;
+            margin: 50px 0;
+            height: 500px; /* Dodano wysokość dla celów demonstracyjnych */
         }
-
-        @media only screen and (max-width: 768px) {
-        /* For desktop: */
-            .col-1 {width: 8.33%;}
-            .col-2 {width: 16.66%;}
-            .col-3 {width: 25%;}
-            .col-4 {width: 33.33%;}
-            .col-5 {width: 41.66%;}
-            .col-6 {width: 50%;}
-            .col-7 {width: 58.33%;}
-            .col-8 {width: 66.66%;}
-            .col-9 {width: 75%;}
-            .col-10 {width: 83.33%;}
-            .col-11 {width: 91.66%;}
-            .col-12 {width: 100%;}
-    }
-
-        div.relative {
-            position: relative;
-            left: 30px;
-            border: 3px solid #2b2a30;
-            background-color: #605f65;      
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        .menu li {
-            padding: 8px;
-            margin-bottom: 1%;
-            background-color: #33b5e5;
-            color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        .btn:hover {
+            background-color: #0056b3;
         }
-
-.menu li:hover {
-  background-color: #0099cc;
-}
-
-.project_box::after {
-  content: "";
-  clear: both;
-  display: grid;
-  grid-template-columns: auto auto 10px;
-  gap: 10px;
-  padding: 10px;
-}
-
-.img-container {
-    float: left;
-    width: fit-content;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    padding: 5px;
-    height: 40px;
-    background-color: #0099cc;
-}
-
+        .active {
+            background-color: #0056b3;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
-    <section>
-        <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-    </section>
-    <section>
-        <div class="relative">
-            This div element has position: relative;
-        </div>
-    </section>
-    <section>
-        <div class="project_box">
-            <div class="col-3 menu">
-                <h>ff</h>
-                <h>tt</h>
-                <ul>
-                <li>Grave Harvest</li>
-                <li>Flflffllf</li>
-                <li>Slime</li>
-                <li>The Food</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="project_box">
-                <div class="col-4 menu">
-                <ul>
-                    <div class="img-container"><p>d dddd ddd</p></div>
-                    <div class="img-container"><p>aaaa aa nn na</p></div>
-                    <div class="img-container"><p>nnnn</p></div>
-                </ul>
-            </div>
-        
-        </div>
-    </section>
 
+    <div class="navbar">
+        <a href="#paragraf1" class="btn nav-link">Przejdź do paragrafu 1</a>
+        <a href="#paragraf2" class="btn nav-link">Przejdź do paragrafu 2</a>
+    </div>
+
+    <div class="section" id="paragraf1">
+        <h2>Paragraf 1</h2>
+        <p>To jest pierwszy paragraf.</p>
+    </div>
+
+    <div class="section" id="paragraf2">
+        <h2>Paragraf 2</h2>
+        <p>To jest drugi paragraf.</p>
+    </div>
+
+    <script>
+        // JavaScript do wykrywania widocznej sekcji i podświetlania odpowiedniego przycisku
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
