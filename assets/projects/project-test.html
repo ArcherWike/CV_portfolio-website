@@ -6,68 +6,161 @@
     <title>Grave Harvest</title>
 </head>
 <style>
-.main-img {
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.top-bar {
     width: 100%;
-    height: 20%;
+    height: 450px;
+    background-color: #333;
+}
+.circle-bar {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Wysokość paska */
+    background-color: #333;
+    display: flex;
+    align-items: center;
 }
 
-.row {
-  display: grid;
-  grid-template-areas: 'one one';
+.back-arrow {
+    margin: 10px;
+    margin-bottom: 0%;
+    transform: scaleX(-1);
+    display: inline-block;
+  direction: rtl;
+    max-width: 45%;
+    max-height: 45%;
+    font-size: 50px;
+    transition: transform 0.3s;
 }
-.column {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 10px;
-  width: 50%;
-  grid-column-gap: 10px;
-  margin-top: 10px;
-  background-color: rgb(179, 199, 200);
-  border-radius: 5px;
-  border-color: black;
+.back-arrow:hover {
+    transform: scaleX(-1.5);
+  cursor: default;
+  filter: brightness(75%);
 }
 
-.title {
-    font-size: medium;
-}
-@media (max-width: 800px) {
-          .main-img {
-            width: 100%;
-            height: 10%;
-          }
 
-          .row {
+.circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* Średnica koła */
+    height: 400px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    bottom: -200px; /* ołowa koła wychodzi poza pasek */
+}
+
+.description-bar {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px; /* Wysokość paska */
+    background-color: #adadad;
+    z-index: -1;
+}
 
-    .column {
-        width: 90%;
+.title-text {
+    height: fit-content;
+    text-align: center;
+    font-size: 225%;
+}
+/**/
+
+.centered-text {
+    margin-top: 20vh;
+    margin-bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Wyśrodkowanie w pionie (50% wysokości widoku) */
+    text-align: center;
+
+}
+
+.column-container {
+    margin-top: 0%;
+    display: flex;
+    gap: 20px; /* Odstęp między kolumnami */
+    width: 80%; /* Można dostosować szerokość kontenera */
+
+    
+}
+
+.column {
+    text-align: center;
+}
+
+
+/* ołowafsdfdsffdssdfdsfasek */
+
+.container-project {
+        display: flex;
+        flex-wrap: wrap;
     }
-  }
+    .box-project {
+        flex: 1;
+        margin: 10px;
+        padding: 20px;
+        background-color: #4fbc1d;
+        border: 1px solid #7a1f1f;
+        box-sizing: border-box;
+    }
+
+
+
 </style>
 <body>
-    <div class="main-img">
-        <img src="">
+
+
+<div class="top-bar">
+
+    <a class="back-arrow"> ▶️</a>
+    <div class="title-text">
+        <h1>Grave Harvest</h1>
+        <h3>styczeń 2023</h3>
     </div>
-</body>
-    <section>
-        <div class="title"><h1>Grave Harvest</h1></div>
-        <div class="">
-            </div>
-    </section>
     
-    <section>
-        <div class="row">
-            <div class="column">
-                <h1>1</h1><br>
-                <h4>xx</h4>
-            </div>
-                <div class="column">2</div>
-                <div class="column">3</div>
-                <div class="column" style="background-color: white;"></div>
-                <div class="column">4</div>
-                <div class="column" style="grid-column: 1/ span 2; 
-                background-image: url(Slime-war.png);">4</div>
-            </div>
-    </section>
+</div>
+<div class="circle-bar">  
+    <div class="circle"></div>
+</div>
+
+
+
+
+<div class="description-bar">
+<div class="centered-text">
+    <p>To jest wyśrodkowany tekst na środku strony.</p>
+</div>
+<div class="column-container">
+    <div class="column">
+        <p>Tekst w pierwszej kolumnie, wyśrodkowany. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dolor qui, molestias commodi, non a accusantium consectetur suscipit eius necessitatibus dicta facere cumque. Perspiciatis totam, aperiam dolores sunt possimus earum.</p>
+    </div>
+    <div class="column">
+        <p>Tekst w drugiej kolumnie, wyśrodkowany.</p>
+    </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="box">
+        <h2>Tytuł 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet odio non leo vestibulum congue.</p>
+    </div>
+    <div class="box">
+        <h2>Tytuł 2</h2>
+        <p>Curabitur nec quam vitae velit euismod fermentum. Nullam viverra feugiat odio id suscipit.</p>
+    </div>
+</div>
+
+
+
+</body>
 </html>
