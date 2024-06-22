@@ -1,0 +1,161 @@
+/* style.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #efc050;
+}
+
+.top-bar {
+    width: 100%;
+    height: 450px;
+    background-color: #f5d997;
+}
+
+.circle-bar {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #f5d997;
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow {
+    filter: sepia(90%);
+    margin: 10px;
+    margin-bottom: 0%;
+    transform: scaleX(-1);
+    display: inline-block;
+    direction: rtl;
+    max-width: 45%;
+    max-height: 45%;
+    font-size: 50px;
+    transition: transform 0.3s;
+}
+
+.back-arrow:hover {
+    transform: scaleX(-1.25);
+    cursor: default;
+}
+
+
+.circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    bottom: -200px;
+    border: #3f3f3f;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.description-bar {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: -1;
+}
+
+.title-text {
+    height: fit-content;
+    text-align: center;
+    font-size: 225%;
+}
+
+/**/
+
+.centered-text {
+    margin-top: 20vh;
+    margin-bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    text-align: center;
+}
+
+
+
+.container {
+    width: 100%;
+    margin-top: 0%;
+    max-width: 50%;
+    background-color: #4f4f4f00;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.01);
+    font-size: larger;
+}
+
+.container h5 {
+    line-height: normal;
+}
+
+
+
+.item-buttons {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    min-width: 150px;
+    line-height: normal;
+    height: 35px;
+    background-color: #3f3f3f;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: x-small;
+    text-align: center;
+}
+
+.item:hover {
+    cursor: default;
+    filter: brightness(75%);
+}
+
+.container img {
+    border: 4px solid black;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1300px) {
+
+    .title-text {
+        font-size: 155%;
+    }
+
+    .description-bar {
+        margin-top: 250px;
+    }
+
+    .container {
+
+        max-width: 95%;
+    }
+
+}
