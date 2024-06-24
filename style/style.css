@@ -205,14 +205,11 @@ html {
 
 .rectangle-box {
 width: 100%;
-  /* 2/3 szerokości ekranu */
   height: 400px;
-  /* Przykładowa wysokość */
-  border: 20px solid #e9ab18; /* Dodanie koloru do obramowania */
-  background-color: #f2cd75; /* Przykładowy kolor tła */
-  box-sizing: border-box; /* Uwzględnienie obramowania w szerokości i wysokości elementu */
+  border: 20px solid #e9ab18;
+  background-color: #f2cd75;
+  box-sizing: border-box;
   display: flex;
-  /* Przykładowy kolor */
   flex-direction: column;
   
 }
@@ -237,8 +234,8 @@ width: 100%;
 .icon-container {
   width: 100%;
   background-color: #ce9613;
-  justify-content: center; /* Wyśrodkowanie ikon poziomo */
-  align-items: center; /* Wyśrodkowanie ikon pionowo */
+  justify-content: center;
+  align-items: center;
   display: flex;
 
   gap: 60px;
@@ -272,7 +269,7 @@ width: 100%;
   display: none;
 }
 
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
+/* --------------------------------- */
 @media (max-width: 900px) {
     .body {
 background-color: #3e8e41;
@@ -315,8 +312,6 @@ background-color: #3e8e41;
     background-color: #3e8e41;
   }
 
-
-
 .parafgaph-text h1 {
   font-size: 40px;
   font-weight: 700;
@@ -339,21 +334,9 @@ display: block;
   width: auto;
 }
 
-
-
-
-
-
 .icon-container {
   gap:  20px;
   padding: 10px;
   margin-bottom: 20px;
 }
-
-
-
 }
-
-
-
-

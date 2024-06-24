@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyWebsite</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,8 @@
 <body>
   <!-- Navigation-->
   <section>
-  <div class="navbar" id="navbar"><p>Wiktoria Szczepanska</p>
+    <h5>.</h5>
+    <div class="navbar" id="navbar"><p>Wiktoria Szczepanska</p>
     <div class="dropdown">
       <button class="drop-button">☰</button>
       <div class="dropdown-content">
@@ -30,10 +32,9 @@
   </div>
   </section>
   
-
   <div class="rectangle-box">
     <div class="parafgaph-text"><h1>WIKTORIA SZCZEPANSKA</h1></div>
-    <div class="parafgaph-text"><h2>Game Developer</h2></div>
+    <div class="parafgaph-text"><h2>projekt: witryny internetowe</h2></div>
   </div>
 
     <section>
@@ -42,7 +43,8 @@
       <div class="parafgaph-text"><h2>PORTFOLIO</h2></div>
 
         <div class="flex-container">
-            <div class="flex-item" onclick="window.location.href='./projects/project-test.html'" style="background-image: url(assets/grave-harvest.gif);">
+            <div class="flex-item" onclick="window.location.href='./projects/GraveHarvest/index.html'" 
+            style="background-image: url(assets/grave-harvest.gif);">
               <ul>
                 <li class="project-title">
                   Grave Harvest
@@ -52,18 +54,16 @@
                   But be aware of ghost and the time passing</li>
               </ul>
               </div>
-            <div class="flex-item" onclick="window.location.href='./projects/StormBetrayal'"
+            <div class="flex-item" onclick="window.location.href='./projects/StormBetrayal/index.html'"
             style="background-image: url(assets/Storm-betrayal.png);">
               <ul>
                 <li class="project-title">Storm betrayal</li>
                 <li class="project-tools">Godot | GD Script</li>
                 <li class="project-description">single-player game that combines strategy, 
-                  deduction, and survival on a deteriorating ship. As the lone protagonist, 
-                  you find yourself amidst a crew harboring suspicions of betrayal,
-                  all while the ship faces imminent peril.</li>
+                  deduction, and survival on a deteriorating ship.</li>
               </ul>
             </div>
-            <div class="flex-item" onclick="window.location.href='./projects/Flowannihilation.html'"
+            <div class="flex-item" onclick="window.location.href='./projects/Flowannihilation/index.html'"
             style="background-image: url(assets/Flowannihilation.png);">
               <ul>
                 <li class="project-title">Flowannihilation</li>
@@ -73,15 +73,17 @@
               </ul>
             </div>
 
-            <div class="flex-item" onclick="window.location.href='./projects/unnamed-slime-game.html'"
-            style="background-image: url(projects/assets/slimes_logo.png);">
+            <div class="flex-item" onclick="window.location.href='./projects/Uslime/index.html'"
+            style="background-image: url(assets/unnamed-slime-game.png);">
               <ul>
                 <li class="project-title">Slime War</li>
                 <li class="project-tools">UE 5</li>
+                <li class="project-description">The Unnamed Slime Game is a fast-paced action game 
+                  where you battle against powerful opponents—four elemental slimes—on the arena.</li>
               </ul>
             </div>
 
-            <div class="flex-item" onclick="window.location.href='./projects/project-test.html'"
+            <div class="flex-item" onclick="window.location.href='./projects/CurveEditor/index.html'"
             style="background-image: url(assets/GUI-curves-editor.gif);">
               <ul>
                 <li class="project-title">
@@ -100,59 +102,15 @@
     <section>
     <div class="section" id="ref-contact"></div>
     <br>
-
-    
-      
       <div class="parafgaph-text"><h2>CONTACT</h2></div>
       <div class="icon-container">
-        <div class="icon">🏠</div>
         <div class="icon">
-        <a href="mailto:wiktoria.szczepanska.x@gmail.com">📧
+        <a href="mailto:ul0285079@edu.uni.lodz.pl">📧
         </a>
-      </div>
-        <div class="icon" onclick="window.location.href='https://www.linkedin.com/in/wiktoria-szczepanska/'">📞</div>
-        <div class="icon" id="logo" onclick="window.location.href='https://github.com/ArcherWike'"><img src="assets/github.png" alt="Github"></div>
-        
+      </div>    
     </div>
     </section>
 
 
-    <script>
-      /* Powiekszanie paska nawigacyjnego przy scrolowaniu
-      <div class="button1" id="div1"><img src="image/puzzle.png" onclick="location.href='move/move_game.html';"><h3>Move</h3></div>*/
-      window.onscroll = function() {
-          const navbar = document.getElementById('navbar');
-          if (window.scrollY === 0) {
-              navbar.classList.add('scrolled');
-          } else {
-              navbar.classList.remove('scrolled');
-          }
-      };
-
-      /* Podswietlanie buttonow*/
-      const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const scrollPosition = (window.scrollY + window.innerHeight)/2
-                
-                if (pageYOffset >= sectionTop - sectionHeight - scrollPosition) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-  </script>
 </body>
 </html>
