@@ -33,6 +33,7 @@
             <div class="item-buttons">
                 <a class="item" href="https://archerywike.itch.io/unnamed-slime-game" target="_blank">Play in game!</a>
                 <a class="item" href="https://github.com/ArcherWike/The-Unnamed-Slime-Game" target="_blank">Github</a>
+                <a class="item" href="TheUnnamedSlimeGame.pdf" download>Download Documentation</a>
                 <div class="item" style="visibility: hidden;"></div>
             </div>
             <h5>action game where you battle against powerful opponents—four elemental slimes—on the arena. Your task is to defeat these colorful beasts, collect their slime, and harness their powers to become even stronger.</h5>
@@ -84,11 +85,45 @@
             <h3>PRZECIWNICY</h3>
             <h5>Przykładowe ustawienia zmiennych dziedziczonych z BP_BaseEnemy</h5>
             <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BP_BaseEnemy_variable2.png" alt="BP_BaseEnemy_variable2"/>
-        <h5>Wszystkie NPC’ty dziedziczą również od BP_BaseEnemy interfejsy</h5>
-        
-        
-        
-        
+            <h5>Wszystkie NPC’ty dziedziczą również od BP_BaseEnemy interfejsy</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/I_Interface_NPC.png" alt="I_InterfaceNPC"/>
+            <h5>I_Enemy AI</h5>
+            <h5>Jest wykorzystywany w taskach Behaviour Tree</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/IEnemyAI1.png" alt="IEnemyAI1"/>
+            <h5>Set Movement Speed – pozwala zmienić prędkość NPC</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/SetMovementSpeed1.png" alt="SetMovementSpeed1"/>
+            <h5>W BT wartość prędkości jest jako enum do wyboru</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BTT_SetMovementSpeed1.png" alt="BTT_SetMovementSpeed1"/>
+            <h5>Task korzysta z interfejsu, który pobiera od aktualnego NPC zadaną wartość</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BTT_SetMovementSpeed2.png" alt="BTT_SetMovementSpeed2"/>
+            <h5>Wygląd implementacji funkcji interfejsu w BP_WaterNPC</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BP_WaterNPC_I.png" alt="BP_WaterNPC"/>
+            <h5>Get Ideal Range – wartości używane do kontrolowania dystansu między przeciwnikiem, a celem</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/GetIdealRange.png" alt="GetIdealRange"/>
+            <h5>Wartości Attack / Defend Radious są pobierane z Data Table (DT_EnemyStats) do Blackboard’a przy tworzeniu NPC</h5>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/DT.png" alt="DT"/>
+            <h3>Działanie w BT</h3>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BTT_MoveToIdealRange.png" alt="MoveToIdealRange"/>
+            <h3>Task</h3>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/BTT_MoveToIdealRange2.png" alt="MoveToIdealRange"/>
+            <h3>Wartości Attack / Defend Radious  są pobrane z Data Table (DT_EnemyStats) do Blackboard’a przy tworzeniu NPC</h3>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/ADRadious.png" alt="ADRadious"/>
+            <h3>Attack – wywołuje event ataku dla NPC</h3>
+            <h3>I Damage – interfejs, którego używa zarówno gracz jak i przeciwnicy</h3>
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/IDamage.png" alt="IDamage"/>
+            <h3>Get Current Health – pobiera aktualną wartość zdrowia postaci z BPC_DamageManager</h3>
+            <h3>Heal – wywołuje funkcje leczenia z BPC_DamageManager</h3>
+            <h3>Take Damage – wywołuje funkcję odebrania obrażeń dla postaci w BPC_DamageManager, biorąc przy tym pod uwagę rodzaj atakującego jak i celu ( te same typy nie zadają sobie obrażeń, a także egzekwuje słabości danych bohaterów )</h3>
+            <h3>Get Max Health – pobiera maksymalną możliwą wartość życia z BPC_DamageManager</h3>
+            <h3>Return / Reserve Attack Token – sprawdza ilość i pobiera od gracza token pozwalający zadać obrażenia. Używany by ograniczyć ilość atakujących go przeciwników, a także wyeliminować problem jednoczesnego ataku</h3>
+            <h3>Get Handle Damage Info – pobiera informacje o typie i rodzaju broni bohatera
+                ( może być graczem lub nie oraz mieć konkretny typ broni )
+            </h3>
+
+            <img src="https://raw.githubusercontent.com/ArcherWike/CV_portfolio-website/main/projects/Uslime/BP/GetHandleDamageInfo.png" alt="GetHandleInfo"/>
+
+            <br>
+            <br>
         </div></div>
 
 </body>
